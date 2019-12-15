@@ -26,4 +26,12 @@ func main() {
 	fmt.Println("Flag ", e2.flag)
 	fmt.Println("Counter ", e2.counter)
 	fmt.Println("pi ", e2.pi)
+
+    // Declaring a variable of the type example and init to zero-value. i.e empty literal construction
+    // does the same thing as var
+    // Better to use var if you want to construct a zero-value variable.
+    e3 := example{}
+
+    // A good use case for empty literal construction would be : returning from a function 
+    fmt.Printf("%+v\n",e3)
 }

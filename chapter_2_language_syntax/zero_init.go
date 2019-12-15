@@ -8,8 +8,8 @@ func main() {
 	var c float64
 	var d bool
 
-	fmt.Println("var a int \t %T [%v]\n", a, a)
-	fmt.Println("var b string \t %T [%v]\n", b, b)
-	fmt.Println("var c float64 \t %T [%v]\n", c, c)
-	fmt.Println("var d bool \t %T [%v]\n", d, d)
+	fmt.Printf("var a int \t %T [%v]\n", a, a)
+	fmt.Printf("var b string \t %T [%v]\n", b, b)
+	fmt.Printf("var c float64 \t %T [%v]\n", c, c)
+	fmt.Printf("var d bool \t %T [%v]\n", d, d)
 }

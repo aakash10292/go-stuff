@@ -28,7 +28,7 @@ func main() {
 	u1 := createUserV1()
 	// u1 is main() function's OWN COPY of a user value
 	u2 := createUserV2()
-	// u2 is
+	// u2 is a shared value
 
 	println("u1", &u1, "u2", u2)
 }
@@ -55,6 +55,7 @@ func createUserV2() *user {
 		email: "aakash@mail.edu",
 	}
 
+    // Sharing the value with print function
 	println("V2", &u)
 
 	// If you're coming from a c/c++ background, this should raise all sorts of alarms.
@@ -70,6 +71,7 @@ func createUserV2() *user {
     // From a sytax perspective, u is a value on heap and go keeps it simple by allowing you to manipulate u value through VALUE SEMANTICS
     // But underneath, it is converted to pointer to allow access to the heap value. 
     // Syntax is abstracting away details of what's happening 
+    // This is why on line 59 above we pass the address of u (even though u is on the heap) 
 }
 
 

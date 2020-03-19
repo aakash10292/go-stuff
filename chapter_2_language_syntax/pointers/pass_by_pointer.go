@@ -1,4 +1,4 @@
-/* Pass by value semantics:
+/* Pass by address semantics:
    In golang, variables are passed by pointers just as they are in C-based languages.
    We pass the address of the data as the parameters.
    Essentially, this is pass by value - only difference is that the data being copied and passed is an address

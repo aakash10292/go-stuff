@@ -29,7 +29,7 @@ func main() {
 	fmt.Println("*************************")
 
 	// Change the value of the index 0 of slice2.
-/*	slice2[0] = "CHANGED"
+	slice2[0] = "CHANGED"
 
 	// Display the change across all existing slices.
 	inspectSlice(slice1)
@@ -43,7 +43,7 @@ func main() {
 	// values over using the builtin copy function.
 	slice3 := make([]string, len(slice1))
 	copy(slice3, slice1)
-	inspectSlice(slice3)*/
+	inspectSlice(slice3)
 }
 
 // inspectSlice exposes the slice header for review.

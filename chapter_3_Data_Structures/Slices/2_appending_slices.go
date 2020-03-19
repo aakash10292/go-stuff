@@ -7,7 +7,7 @@ func main() {
 	var data []string // We used var, hence zero-value init
 
 	emptySlice := []string{} // Empty literal initialization
-	fmt.Printf("Empty String: %+v\n", emptySlice)
+	fmt.Printf("Empty slice of strings: %+v\n", emptySlice)
 	/*
 	   Unlike the other types(built-in and user-defined),
 	   Empty literal init does NOT do zero value init.

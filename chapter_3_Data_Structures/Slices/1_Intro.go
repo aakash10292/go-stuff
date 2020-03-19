@@ -31,15 +31,34 @@ func main() {
 
 	// Error: panic: runtime error: index out of range
 
-	fmt.Println(fruits) // passed using VALUE SEMATICS
+    fmt.Println(fruits) // slice passed as VALUE to print function
 	// Println gets its own copy of the 3-word slice.
 	// The backing store is shared
-	inspectSlice(fruits)
+	inspectSliceVals(fruits)
+
+    fmt.Printf("Original slice pointer: %p\n", &fruits)
+    inspectSliceRefs(fruits)
+
+    fmt.Println("Inspecting types")
+    inspectSliceTypes(fruits)
 }
 
-func inspectSlice(slice []string) { // Notice how you don't pass a size between []
+func inspectSliceVals(slice []string) { // Notice how you don't pass a size between []
 	fmt.Printf("Length[%d] Capacity[%d]\n", len(slice), cap(slice))
 	for i, s := range slice { // VALUE SEMANTICS for -> creates it's own 3 word slice
-		fmt.Printf("[%d] %p %s\n", i, &slice[i], s)
+		fmt.Printf("[%d] %s %s\n", i, slice[i], s)
 	}
+}
+func inspectSliceRefs(slice []string) { 
+    // VALUE semantics being used, the function has it's own slice reference
+    fmt.Printf("Slice used in inspectSliceRefs: %p\n",&slice)
+	for i, s := range slice { // VALUE SEMANTICS for -> creates it's own copy. anonymous, no name (rvalue)
+		fmt.Printf("[%d] %p %p\n", i, &slice, &s)  // slice here is the slice passed to the function, NOT the range for copy
+	}
+}
+
+func inspectSliceTypes(slice []string){
+    for i,s := range slice {
+        fmt.Printf("iterator[%d]:%T slice:%T s:%T\n",i,i, slice, s) // you should see that slice is of type 'slice' and s is a 'string'
+    }
 }
